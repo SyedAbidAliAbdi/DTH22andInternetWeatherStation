@@ -1,7 +1,7 @@
 # DTH22andInternetWeatherStation
 A beautiful web base project that shows Internal Tempurature and Humidity as well as Internet weather along with Icons and current time
 This project is create by Syed Abid Ali Abdi from Karachi Pakistan.
-Conponent that used in this project are mention below
+Component that used in this project are mention below
 1) DHT22 module
 2) ESP-01s (ESP8266)
 DTH22 Connected with ESP-01s via Pin # 2.
