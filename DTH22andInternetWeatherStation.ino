@@ -3,8 +3,8 @@
 #include <DHT.h>
 
 // Replace with your network credentials
-const char* ssid       = "***** WiFi ID******";
-const char* password   = "***** WiFi PASSWORD *****";
+const char* ssid       = "TP-Link_5045";
+const char* password   = "84284365";
 
 // Create a web server on port 80
 WiFiServer server(80);
@@ -70,7 +70,7 @@ void loop() {
               "<meta http-equiv='refresh' content='900'>\n"
               "<meta name='author' content='Syed Abid Ali Abdi'>\n"
               "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>\n"
-              "<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p		+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>\n"
+              "<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>\n"
               "<style>\n"
               "  body {\n"
               "    background-color: #f2f2f2;\n"
@@ -168,6 +168,20 @@ void loop() {
                  "<td id='humidity'></td>\n"
                  "</tr>\n"
                  "<tr>\n"
+                 "<td>Min Temperature</td>\n"
+                 "<td class='icon'><i class='fa fa-thermometer-empty'></i></td>\n"
+                 "<td id='min-temperature'></td>\n"
+                 "</tr>\n"
+                 "<tr>\n"
+                 "<td>Max Temperature</td>\n"
+                 "<td class='icon'><i class='fa fa-thermometer-full'></i></td>\n"
+                 "<td id='max-temperature'></td>\n"
+                 "</tr>\n"
+                 "<tr>\n"
+                 "<td>Feel Like Temperature</td>\n"
+                 "<td class='icon'><i class='fa fa-thermometer-three-quarters'></i></td>\n"
+                 "<td id='feel-like-temperature'></td>\n"
+                 "</tr>\n"
                  "<td>Wind Speed</td>\n"
                  "<td class='icon'><i class='fas fa-wind'></i></td>\n"
                  "<td id='wind-speed'></td>\n"
@@ -200,7 +214,7 @@ void loop() {
               "</tbody>\n"
               "</table>\n"
               "<script>\n"
-              "  const api_key = '*********Your API Key **********';\n"
+              "  const api_key = 'f35a205df5b5b99f9ca991ab6b890e3b';\n"
               "  const city_name = 'Karachi';\n"
               "  const api_url = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${api_key}&units=metric`;\n\n"
               "  function degToCompass(num) {\n"
@@ -215,6 +229,9 @@ void loop() {
               "      document.getElementById('description').innerText = data.weather[0].description;\n"
               "      document.querySelector('#temperature').innerText = `${data.main.temp} °C`;\n"
               "      document.querySelector('#humidity').innerText = `${data.main.humidity}%`;\n"
+              "      document.querySelector('#min-temperature').innerText = `${data.main.temp_min} °C`;\n"
+              "      document.querySelector('#max-temperature').innerText = `${data.main.temp_max} °C`;\n"
+              "      document.querySelector('#feel-like-temperature').innerText = `${data.main.feels_like} °C`;\n"
               "      document.querySelector('#wind-speed').innerText = `${data.wind.speed} m/s`;\n"
               "      document.querySelector('#wind-direction').innerText = `${degToCompass(data.wind.deg)} (${data.wind.deg}°)`;\n"
               "      document.querySelector('#pressure').innerText = `${data.main.pressure} hPa`;\n"
